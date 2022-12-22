@@ -17,8 +17,7 @@ class Post(models.Model):
     featured = models.BooleanField(default=False)  #post destacados
 
     #funcion q da en el buscador url que ponga el slug al final del url
-    def get_absolute_url(self):
-        return reverse("blogs:post", kwargs={"slug": self.slug})
+   
     
     
     def __str__(self): 
@@ -33,8 +32,7 @@ class Category(models.Model): #definir le modelo de categorias
     class Meta:
         verbose_name_plural = 'categories' #por error de django cambiamos el pural de category a categories
 
-    def get_absolute_url(self):
-        return reverse("blogs:category", kwargs={"slug": self.slug})
+
 
     def __str__(self):
         return self.title
